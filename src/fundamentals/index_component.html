@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Fundamentals</title>
+<!-- Import the React, React-Dom and Babel libraries from unpkg -->
+  <script type="application/javascript" src="https://unpkg.com/react@16.4.0/umd/react.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    
+    class MyComponent extends React.Component{
+        render(){
+            return(
+                <div>
+                    <h4>Good to See you {this.props.name}</h4>
+                    <p><small>I promise I am happy</small></p>
+                </div>
+            )
+        }
+    }
+    MyComponent.defaultProps = {
+        name: 'Dude'
+    }
+
+    function App(){
+        return (
+            <div>
+                <h1>Hello React</h1>
+                <MyComponent name="Messi"/>
+                <MyComponent name="Ronaldo"/>
+                <MyComponent name="ABC"/>
+                <MyComponent/>
+            </div>
+        )
+    }
+
+    const rootElement = document.getElementById('root');
+    ReactDOM.render(<App/>, rootElement);
+  </script>
+
+</body>
+
+</html>
